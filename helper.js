@@ -10,6 +10,10 @@ const welcome = () => {
 	return 'Welcoe to nodejs';
 }
 
+const areaOfSquare = a => {
+	return a*a;
+}
+
 module.exports={
-	sum, welcome
+	sum, welcome, areaOfSquare
 }
