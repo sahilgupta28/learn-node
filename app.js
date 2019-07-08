@@ -9,11 +9,14 @@
 const fs = require('fs')
 const file_name = 'target.txt'
 
+const errHandler = err => console.log(err);
+const dataHandler = data => console.log(data.toString());
+
 fs.readFile(file_name, (err, data) => {
 	if(err){
-		console.log(err);
+		errHandler(err);
 	}
-	console.log(data.toString());
+	dataHandler(data);
 })
 
 console.log('Async programming...?');
