@@ -2,18 +2,18 @@
 // 	return a+b
 // }
 
-const sum = (a, b) => {
+exports.sum = (a, b) => {
 	return a + b;
 }
 
-const welcome = () => {
-	return 'Welcoe to nodejs';
-}
+// const welcome = () => {
+// 	return 'Welcoe to nodejs';
+// }
 
-const areaOfSquare = a => {
-	return a*a;
-}
+// const areaOfSquare = a => {
+// 	return a*a;
+// }
 
-module.exports={
-	sum, welcome, areaOfSquare
-}
+// module.exports={
+// 	sum, welcome, areaOfSquare
+// }
