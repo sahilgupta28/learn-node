@@ -2,7 +2,14 @@ const express = require("express");
 const app = express();
 const morgan = require("morgan");
 const dotenv = require("dotenv");
+const mongoose = require("mongoose");
 dotenv.config()
+
+mongoose.connect('mongodb://localhost:27017/learn_node', { useNewUrlParser: true })
+mongoose.connection.once('open', () => {
+	console.log('connection open')
+})
+
 
 const postRoutes = require('./routes/post')
 
