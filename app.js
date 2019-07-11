@@ -3,9 +3,10 @@ const app = express();
 const morgan = require("morgan");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
 dotenv.config()
 
-mongoose.connect('mongodb://localhost:27017/learn_node', { useNewUrlParser: true })
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true })
 mongoose.connection.once('open', () => {
 	console.log('connection open')
 })
@@ -14,6 +15,7 @@ mongoose.connection.once('open', () => {
 const postRoutes = require('./routes/post')
 
 app.use(morgan("dev"))
+app.use(bodyParser.json())
 
 const middleware =(req, res, next) => {
 	console.log("My middleware.");
